@@ -23,3 +23,26 @@ run
 
 # Files from Forge MDK
 forge*changelog.txt
+
+# Logs e arquivos de execução do Minecraft
+/run/
+/run-data/
+*.log
+*.lck
+
+# MacOS (caso você ou algum colaborador use Mac)
+.DS_Store
+
+# Pasta de builds finais
+/build/
+
+# IntelliJ específico
+.idea/libraries/
+.idea/modules.xml
+.idea/workspace.xml
+.idea/jarRepositories.xml
+.idea/compiler.xml
+*.iws
+
+#Pasta Desnecessaria
+.imagens
