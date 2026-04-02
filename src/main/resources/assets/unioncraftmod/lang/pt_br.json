@@ -1,0 +1,31 @@
+{
+  "_itens": "VV ITEMS VV",
+  "item.unioncraftmod.ruby": "Rubi",
+  "item.unioncraftmod.sapphire": "Safira",
+  "item.unioncraftmod.guava": "Goiaba",
+
+  "_items": "VV FERRAMENTAS VV",
+  "item.unioncraftmod.rose_sword": "Espada de Rosas",
+  "item.unioncraftmod.torchflower_sword": "Espada de Plantocha",
+  "item.unioncraftmod.sunflower_sword": "Espada de Girassol",
+
+  "_combustiveis": "VV COMBUSTIVEIS VV",
+  "item.unioncraftmod.big_bang": "Big Bang",
+
+  "_blocos": "VV BLOCOS VV",
+  "block.unioncraftmod.ruby_ore": "Minério de Rubi",
+  "block.unioncraftmod.deepslate_ruby_ore": "Minério de Rubi Ardosiabissal",
+  "block.unioncraftmod.sapphire_ore": "Minério de Safira",
+  "block.unioncraftmod.deepslate_sapphire_ore": "Minério de Safira Ardosiabissal",
+  "block.unioncraftmod.ruby_block": "Bloco de Rubi",
+  "block.unioncraftmod.sapphire_block": "Bloco de Safira",
+
+  "_tooltips": "VV DESCRIÇÕES VV",
+  "tooltip.unioncraftmod.big_bang.shift": "§7Segure §eSHIFT §7para mais informações",
+  "tooltip.unioncraftmod.big_bang.lore1": "§5A energia primordial que deu origem ao universo",
+  "tooltip.unioncraftmod.big_bang.lore2": "§dCondensada em um núcleo impossível.",
+  "tooltip.unioncraftmod.big_bang.lore3": "§7Nunca se consome!",
+
+  "_abacriativa": "VV ABA CREATIVA VV",
+  "creativetab.unioncraft_tab": "UnionCraft Mod"
+}

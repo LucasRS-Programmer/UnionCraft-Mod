@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "unioncraftmod:block/ruby_ore"
+    }
+  }
+}

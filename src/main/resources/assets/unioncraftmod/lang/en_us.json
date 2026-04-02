@@ -1,0 +1,31 @@
+{
+  "_items": "VV ITEMS VV",
+  "item.unioncraftmod.ruby": "Ruby",
+  "item.unioncraftmod.sapphire": "Sapphire",
+  "item.unioncraftmod.guava": "Guava",
+
+  "_items": "VV TOOLS VV",
+  "item.unioncraftmod.rose_sword": "Rose Sword",
+  "item.unioncraftmod.torchflower_sword": "Torchflower Sword",
+  "item.unioncraftmod.sunflower_sword": "Sunflower Sword",
+
+  "_fuels": "VV FUELS VV",
+  "item.unioncraftmod.big_bang": "Big Bang",
+
+  "_block": "VV BLOCKS VV",
+  "block.unioncraftmod.ruby_ore": "Ruby Ore",
+  "block.unioncraftmod.deepslate_ruby_ore": "Deepslate Ruby Ore",
+  "block.unioncraftmod.sapphire_ore": "Sapphire Ore",
+  "block.unioncraftmod.deepslate_sapphire_ore": "Deepslate Sapphire Ore",
+  "block.unioncraftmod.ruby_block": "Block of Ruby",
+  "block.unioncraftmod.sapphire_block": "Block of Sapphire",
+
+  "_tooltips": "VV TOOLTIPS VV",
+  "tooltip.unioncraftmod.big_bang.shift": "§7Hold §eSHIFT §7for more information",
+  "tooltip.unioncraftmod.big_bang.lore1": "§5The primordial energy that birthed the universe.",
+  "tooltip.unioncraftmod.big_bang.lore2": "§dCondensed into an eternal core.",
+  "tooltip.unioncraftmod.big_bang.lore3": "§7Never consumed!",
+
+  "creativetab": "VV CREATIVE TAB VV",
+  "creativetab.unioncraft_tab": "UnionCraft Mod"
+}
