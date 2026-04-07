@@ -35,6 +35,12 @@ public class ModTags {
         public static final TagKey<Item> YELLOW_FLOWERS =
                 ItemTags.create(ResourceLocation.fromNamespaceAndPath("unioncraftmod", "yellow_flowers"));
 
+        public static final TagKey<Item> RUBY_ITEMS =
+                ItemTags.create(ResourceLocation.fromNamespaceAndPath("unioncraftmod", "ruby_items"));
+
+        public static final TagKey<Item> SAPPHIRE_ITEMS =
+                ItemTags.create(ResourceLocation.fromNamespaceAndPath("unioncraftmod", "ruby_items"));
+
     }
 
 }

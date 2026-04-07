@@ -18,17 +18,36 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        registerItems();
+        registerTools();
+        registerArmor();
+    }
+    private void registerItems() {
         simpleItem(ModItems.RUBY);
         simpleItem(ModItems.SAPPHIRE);
-
         simpleItem(ModItems.GUAVA);
-
         simpleItem(ModItems.BIG_BANG);
-
-        simpleItem(ModItems.ROSE_SWORD);
-        simpleItem(ModItems.SUNFLOWER_SWORD);
-        simpleItem(ModItems.TORCHFLOWER_SWORD);
     }
+
+    private void registerTools() {
+        handheldItem(ModItems.ROSE_SWORD);
+        handheldItem(ModItems.SUNFLOWER_SWORD);
+        handheldItem(ModItems.TORCHFLOWER_SWORD);
+        handheldItem(ModItems.RUBY_SWORD);
+
+        handheldItem(ModItems.RUBY_PICKAXE);
+        handheldItem(ModItems.RUBY_AXE);
+        handheldItem(ModItems.RUBY_SHOVEL);
+        handheldItem(ModItems.RUBY_HOE);
+    }
+
+    private void registerArmor() {
+        armorItem(ModItems.RUBY_HELMET);
+        armorItem(ModItems.RUBY_CHESTPLATE);
+        armorItem(ModItems.RUBY_LEGGINGS);
+        armorItem(ModItems.RUBY_BOOTS);
+    }
+
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
          return withExistingParent(item.getId().getPath(),
@@ -36,4 +55,15 @@ public class ModItemModelProvider extends ItemModelProvider {
                  ResourceLocation.fromNamespaceAndPath(UnionCraftMod.MOD_ID, "item/" + item.getId().getPath()));
     }
 
+    private ItemModelBuilder handheldItem(RegistryObject<Item> item) {
+        return withExistingParent(item.getId().getPath(),
+                ResourceLocation.parse("item/handheld")).texture("layer0",
+                ResourceLocation.fromNamespaceAndPath(UnionCraftMod.MOD_ID, "item/" + item.getId().getPath()));
+    }
+
+    private ItemModelBuilder armorItem(RegistryObject<Item> item) {
+        return withExistingParent(item.getId().getPath(),
+                ResourceLocation.parse("item/generated")).texture("layer0",
+                ResourceLocation.fromNamespaceAndPath(UnionCraftMod.MOD_ID, "item/" + item.getId().getPath()));
+    }
 }

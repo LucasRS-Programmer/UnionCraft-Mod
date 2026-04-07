@@ -4,10 +4,23 @@
   "item.unioncraftmod.sapphire": "Safira",
   "item.unioncraftmod.guava": "Goiaba",
 
-  "_items": "VV FERRAMENTAS VV",
+  "_items": "VV ESPADAS VV",
   "item.unioncraftmod.rose_sword": "Espada de Rosas",
   "item.unioncraftmod.torchflower_sword": "Espada de Plantocha",
   "item.unioncraftmod.sunflower_sword": "Espada de Girassol",
+  "item.unioncraftmod.ruby_sword": "Espada de Rubi",
+
+  "_items": "VV FERRAMENTAS VV",
+  "item.unioncraftmod.ruby_pickaxe": "Picareta de Rubi",
+  "item.unioncraftmod.ruby_axe": "Machado de Rubi",
+  "item.unioncraftmod.ruby_shovel": "Pá de Rubi",
+  "item.unioncraftmod.ruby_hoe": "Enxada de Rubi",
+
+  "_items": "VV ARMADURAS VV",
+  "item.unioncraftmod.ruby_helmet": "Capacete de Rubi",
+  "item.unioncraftmod.ruby_chestplate": "Peitoral de Rubi",
+  "item.unioncraftmod.ruby_leggings": "Calças de Rubi",
+  "item.unioncraftmod.ruby_boots": "Bota de Rubi",
 
   "_combustiveis": "VV COMBUSTIVEIS VV",
   "item.unioncraftmod.big_bang": "Big Bang",

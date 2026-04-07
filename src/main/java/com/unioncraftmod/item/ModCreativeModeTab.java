@@ -26,6 +26,17 @@ public class ModCreativeModeTab {
                     output.accept(ModItems.ROSE_SWORD.get());
                     output.accept(ModItems.TORCHFLOWER_SWORD.get());
                     output.accept(ModItems.SUNFLOWER_SWORD.get());
+                    output.accept(ModItems.RUBY_SWORD.get());
+
+                    output.accept(ModItems.RUBY_PICKAXE.get());
+                    output.accept(ModItems.RUBY_AXE.get());
+                    output.accept(ModItems.RUBY_SHOVEL.get());
+                    output.accept(ModItems.RUBY_HOE.get());
+
+                    output.accept(ModItems.RUBY_HELMET.get());
+                    output.accept(ModItems.RUBY_CHESTPLATE.get());
+                    output.accept(ModItems.RUBY_LEGGINGS.get());
+                    output.accept(ModItems.RUBY_BOOTS.get());
 
                     output.accept(ModBlocks.RUBY_ORE.get());
                     output.accept(ModBlocks.DEEPSLATE_RUBY_ORE.get());

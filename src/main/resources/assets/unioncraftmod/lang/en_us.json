@@ -4,10 +4,23 @@
   "item.unioncraftmod.sapphire": "Sapphire",
   "item.unioncraftmod.guava": "Guava",
 
-  "_items": "VV TOOLS VV",
+  "_items": "VV SWORDS VV",
   "item.unioncraftmod.rose_sword": "Rose Sword",
   "item.unioncraftmod.torchflower_sword": "Torchflower Sword",
   "item.unioncraftmod.sunflower_sword": "Sunflower Sword",
+  "item.unioncraftmod.ruby_sword": "Ruby Sword",
+
+  "_items": "VV TOOLS VV",
+  "item.unioncraftmod.ruby_pickaxe": "Ruby Pickaxe",
+  "item.unioncraftmod.ruby_axe": "Ruby Axe",
+  "item.unioncraftmod.ruby_shovel": "Ruby Shovel",
+  "item.unioncraftmod.ruby_hoe": "Ruby Hoe",
+
+  "_items": "VV ARMORS VV",
+  "item.unioncraftmod.ruby_helmet": "Ruby Helmet",
+  "item.unioncraftmod.ruby_chestplate": "Ruby Chestplate",
+  "item.unioncraftmod.ruby_leggings": "Ruby Leggings",
+  "item.unioncraftmod.ruby_boots": "Ruby Boots",
 
   "_fuels": "VV FUELS VV",
   "item.unioncraftmod.big_bang": "Big Bang",

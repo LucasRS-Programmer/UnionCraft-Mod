@@ -3,11 +3,11 @@ package com.unioncraftmod.item;
 import com.unioncraftmod.UnionCraftMod;
 import com.unioncraftmod.item.custom.FuelItem;
 import com.unioncraftmod.item.custom.FlowerSwordItem;
+import com.unioncraftmod.item.custom.RubyArmorItem;
+import com.unioncraftmod.item.material.ModArmorMaterials;
 import com.unioncraftmod.tier.ModToolTiers;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Rarity;
-import net.minecraft.world.item.Tiers;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -15,6 +15,9 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import com.unioncraftmod.item.custom.FastFoodItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.Rarity;
 
 public class ModItems {
 
@@ -50,6 +53,42 @@ public class ModItems {
                     null, 0, 0,
                     null, 0,
                     true, false));
+
+    public static final RegistryObject<Item> RUBY_SWORD = ITEMS.register("ruby_sword",
+            () -> new SwordItem(ModToolTiers.RUBY_ITEMS, 4, -2.4F,
+                    new Item.Properties().rarity(Rarity.UNCOMMON)));
+
+    public static final RegistryObject<Item> RUBY_PICKAXE = ITEMS.register("ruby_pickaxe",
+            () -> new PickaxeItem(ModToolTiers.RUBY_ITEMS, 1, -2.8F,
+                    new Item.Properties().rarity(Rarity.UNCOMMON)));
+
+    public static final RegistryObject<Item> RUBY_AXE = ITEMS.register("ruby_axe",
+            () -> new AxeItem(ModToolTiers.RUBY_ITEMS, 5.0F, -3.0F,
+                    new Item.Properties().rarity(Rarity.UNCOMMON)));
+
+    public static final RegistryObject<Item> RUBY_SHOVEL = ITEMS.register("ruby_shovel",
+            () -> new ShovelItem(ModToolTiers.RUBY_ITEMS, 1.5F, -3.0F,
+                    new Item.Properties().rarity(Rarity.UNCOMMON)));
+
+    public static final RegistryObject<Item> RUBY_HOE = ITEMS.register("ruby_hoe",
+            () -> new HoeItem(ModToolTiers.RUBY_ITEMS, -2, 0.0F,
+                    new Item.Properties().rarity(Rarity.UNCOMMON)));
+
+    public static final RegistryObject<Item> RUBY_HELMET = ITEMS.register("ruby_helmet",
+            () -> new RubyArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.HELMET,
+                    new Item.Properties().rarity(Rarity.UNCOMMON)));
+
+    public static final RegistryObject<Item> RUBY_CHESTPLATE = ITEMS.register("ruby_chestplate",
+            () -> new RubyArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.CHESTPLATE,
+                    new Item.Properties()));
+
+    public static final RegistryObject<Item> RUBY_LEGGINGS = ITEMS.register("ruby_leggings",
+            () -> new RubyArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.LEGGINGS,
+                    new Item.Properties()));
+
+    public static final RegistryObject<Item> RUBY_BOOTS = ITEMS.register("ruby_boots",
+            () -> new RubyArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.BOOTS,
+                    new Item.Properties()));
 
     public static final RegistryObject<Item> BIG_BANG = ITEMS.register("big_bang",
             () -> new FuelItem(new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC), 4000));

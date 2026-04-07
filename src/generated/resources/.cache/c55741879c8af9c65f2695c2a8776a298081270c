@@ -1,8 +1,17 @@
-// 1.20.1	2026-03-25T12:00:34.0757992	Item Models: unioncraftmod
+// 1.20.1	2026-04-07T13:08:25.8830597	Item Models: unioncraftmod
 986ed0e76f984eff6bcc24142e5646e651b9c590 assets/unioncraftmod/models/item/big_bang.json
 280b910b422f0e76a13d8e29bde1a9998929f205 assets/unioncraftmod/models/item/guava.json
-29f646a2f7bfc917af6ed3b435eb247bdd4ad613 assets/unioncraftmod/models/item/rose_sword.json
+f8bf7d3affcf5863f3791019e74f093066412d80 assets/unioncraftmod/models/item/rose_sword.json
 934b987d19f774b7b93a24b83c81c1705f5b82c3 assets/unioncraftmod/models/item/ruby.json
+62d6b8bc76cc82607334109ff4ca7dbe124014c1 assets/unioncraftmod/models/item/ruby_axe.json
+95cce06933f337fd5a93635bd52a1bfa1d17d34f assets/unioncraftmod/models/item/ruby_boots.json
+8b27ea192144b96885b8a44224fa1cebb77873ee assets/unioncraftmod/models/item/ruby_chestplate.json
+b96265aace305f9afb68a0e1957b973119474598 assets/unioncraftmod/models/item/ruby_helmet.json
+be87fd5e668b6ba01cc58e6bc34ea16a92fc054c assets/unioncraftmod/models/item/ruby_hoe.json
+e5e820d61f86d26d42fffc94f68f45782c892d66 assets/unioncraftmod/models/item/ruby_leggings.json
+b4b6e2d4d126bdcfaba70d291b3db8abda344b53 assets/unioncraftmod/models/item/ruby_pickaxe.json
+4e0bb16be0cbf11c550f98f1b75ff525bd4f34ff assets/unioncraftmod/models/item/ruby_shovel.json
+22494ea84cb25bec5f50a8254b167bd8ef80d87f assets/unioncraftmod/models/item/ruby_sword.json
 fb6b388d1de630d283fabe7e72b33ba00f96decb assets/unioncraftmod/models/item/sapphire.json
-1110b0e8936bb0190c301e970151d2fdda08c531 assets/unioncraftmod/models/item/sunflower_sword.json
-63c0b6811674aa3da38b3614cb8bba581ae9ac61 assets/unioncraftmod/models/item/torchflower_sword.json
+3036b86753c3a8fe5422ae190c6117d6cbeee752 assets/unioncraftmod/models/item/sunflower_sword.json
+694d85e50ae7b0190cd41a5b4da5633350714777 assets/unioncraftmod/models/item/torchflower_sword.json
