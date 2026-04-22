@@ -3,8 +3,6 @@ package com.unioncraftmod.datagen;
 import com.unioncraftmod.datagen.loot.ModBlockLootTables;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
-import net.minecraft.world.level.storage.loot.LootParams;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 
 import java.util.List;

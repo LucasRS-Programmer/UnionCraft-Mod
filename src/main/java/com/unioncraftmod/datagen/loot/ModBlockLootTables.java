@@ -31,6 +31,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     protected void generate() {
         this.dropSelf(ModBlocks.RUBY_BLOCK.get());
         this.dropSelf(ModBlocks.SAPPHIRE_BLOCK.get());
+        this.dropSelf(ModBlocks.CRAFTER_COMPRESSOR.get());
+        this.dropSelf(ModBlocks.COMPRESSED_COAL_BLOCK.get());
 
         this.add(ModBlocks.RUBY_ORE.get(),
                block -> this.createModOreDrop(ModBlocks.RUBY_ORE.get(), ModItems.RUBY.get()));

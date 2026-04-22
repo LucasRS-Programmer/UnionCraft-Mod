@@ -25,16 +25,17 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.RUBY_ORE.get(),
                         ModBlocks.DEEPSLATE_RUBY_ORE.get(),
                         ModBlocks.SAPPHIRE_ORE.get(),
-                        ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get());
+                        ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get(),
+                        ModBlocks.COMPRESSED_COAL_BLOCK.get());
 
         this.tag(Tags.Blocks.ORES)
                 .addTag(ModTags.Blocks.MOD_ORE);
 
-        this.tag(BlockTags.NEEDS_STONE_TOOL);
+        this.tag(BlockTags.NEEDS_STONE_TOOL)
+                .add(ModBlocks.COMPRESSED_COAL_BLOCK.get());
 
         this.tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.RUBY_BLOCK.get(),
-                        ModBlocks.RUBY_BLOCK.get(),
                         ModBlocks.SAPPHIRE_BLOCK.get())
                 .addTag(ModTags.Blocks.MOD_ORE);
 
@@ -47,7 +48,8 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get(),
                         ModBlocks.SAPPHIRE_ORE.get(),
                         ModBlocks.RUBY_BLOCK.get(),
-                        ModBlocks.SAPPHIRE_BLOCK.get());
+                        ModBlocks.SAPPHIRE_BLOCK.get(),
+                        ModBlocks.COMPRESSED_COAL_BLOCK.get());
 
 
 

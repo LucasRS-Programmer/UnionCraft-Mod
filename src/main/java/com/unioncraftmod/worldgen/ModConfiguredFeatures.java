@@ -34,7 +34,7 @@ public class ModConfiguredFeatures {
 
         );
 
-        //valor no final (8) é o tamanho máximo que você quer da veia de minérios
+        //valor no final (8) é o tamanho máximo da veia de minérios
         register(context, RUBY_ORE_KEY, Feature.ORE, new OreConfiguration(rubyOres, 8));
 
         List<OreConfiguration.TargetBlockState>sapphireOres = List.of(

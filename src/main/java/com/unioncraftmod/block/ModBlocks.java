@@ -1,7 +1,10 @@
 package com.unioncraftmod.block;
 
 import com.unioncraftmod.UnionCraftMod;
+import com.unioncraftmod.block.custom.CrafterCompressorBlock;
 import com.unioncraftmod.item.ModItems;
+import com.unioncraftmod.item.custom.FuelBlockItem;
+import net.minecraft.client.resources.model.Material;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -45,6 +48,22 @@ public class ModBlocks {
             () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE).sound(SoundType.AMETHYST)
                     .strength(3f).requiresCorrectToolForDrops(), UniformInt.of(3, 7)));
 
+    public static final RegistryObject<Block> CRAFTER_COMPRESSOR =
+            BLOCKS.register("crafter_compressor",
+                    () -> new CrafterCompressorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
+                            .strength(4f)
+                            .requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> COMPRESSED_COAL_BLOCK =
+            registerFuelBlock("compressed_coal_block",
+                    () -> new Block(
+                            BlockBehaviour.Properties.copy(Blocks.COAL_BLOCK)
+                                    .sound(SoundType.DEEPSLATE)
+                                    .strength(5f)
+                                    .requiresCorrectToolForDrops()
+                            ),
+                    1600 * 81
+            );
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
@@ -55,6 +74,16 @@ public class ModBlocks {
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
         return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     };
+
+    //BLOCOS DE COMBUSTIVEL
+    private static <T extends Block> RegistryObject<T> registerFuelBlock(String name, Supplier<T> block, int burnTime) {
+        RegistryObject<T> toReturn = BLOCKS.register(name, block);
+
+        ModItems.ITEMS.register(name,
+                () -> new FuelBlockItem(toReturn.get(), new Item.Properties(), burnTime));
+
+        return toReturn;
+    }
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);

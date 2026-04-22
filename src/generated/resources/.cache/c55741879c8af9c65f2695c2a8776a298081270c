@@ -1,5 +1,6 @@
-// 1.20.1	2026-04-07T13:08:25.8830597	Item Models: unioncraftmod
+// 1.20.1	2026-04-20T13:13:59.9403334	Item Models: unioncraftmod
 986ed0e76f984eff6bcc24142e5646e651b9c590 assets/unioncraftmod/models/item/big_bang.json
+ad95e2600f315810311d487a3b9c6f849ea2d440 assets/unioncraftmod/models/item/compressed_coal.json
 280b910b422f0e76a13d8e29bde1a9998929f205 assets/unioncraftmod/models/item/guava.json
 f8bf7d3affcf5863f3791019e74f093066412d80 assets/unioncraftmod/models/item/rose_sword.json
 934b987d19f774b7b93a24b83c81c1705f5b82c3 assets/unioncraftmod/models/item/ruby.json
@@ -13,5 +14,14 @@ b4b6e2d4d126bdcfaba70d291b3db8abda344b53 assets/unioncraftmod/models/item/ruby_p
 4e0bb16be0cbf11c550f98f1b75ff525bd4f34ff assets/unioncraftmod/models/item/ruby_shovel.json
 22494ea84cb25bec5f50a8254b167bd8ef80d87f assets/unioncraftmod/models/item/ruby_sword.json
 fb6b388d1de630d283fabe7e72b33ba00f96decb assets/unioncraftmod/models/item/sapphire.json
+77da2fac1954587fe20b5768d96843f93596556f assets/unioncraftmod/models/item/sapphire_axe.json
+5b7a3e4a9fad374f11fa96e326531c9c15918cbd assets/unioncraftmod/models/item/sapphire_boots.json
+3215b19f6cfa6dd90826739665388a94d9f2eb54 assets/unioncraftmod/models/item/sapphire_chestplate.json
+ebb4ac92910407f486ec63f6f55b65606770f7fa assets/unioncraftmod/models/item/sapphire_helmet.json
+315503bc35275c01a145c42a159ae357c83512e4 assets/unioncraftmod/models/item/sapphire_hoe.json
+7087120e0a20cf145432700689124f2868f22641 assets/unioncraftmod/models/item/sapphire_leggings.json
+580af3479373c22cf3d194d5e9b5f6d37fff3c93 assets/unioncraftmod/models/item/sapphire_pickaxe.json
+37986c93050be83f7f3ef9091477c64c5278f368 assets/unioncraftmod/models/item/sapphire_shovel.json
+ceda04bfa5aaa03258cad76bf0628f90a8ad266a assets/unioncraftmod/models/item/sapphire_sword.json
 3036b86753c3a8fe5422ae190c6117d6cbeee752 assets/unioncraftmod/models/item/sunflower_sword.json
 694d85e50ae7b0190cd41a5b4da5633350714777 assets/unioncraftmod/models/item/torchflower_sword.json

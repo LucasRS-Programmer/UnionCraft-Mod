@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:iron_block"
+    },
+    "C": {
+      "item": "minecraft:crafting_table"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "P": {
+      "item": "minecraft:piston"
+    }
+  },
+  "pattern": [
+    "IPI",
+    "ICI",
+    "IBI"
+  ],
+  "result": {
+    "item": "unioncraftmod:crafter_compressor"
+  },
+  "show_notification": true
+}

@@ -1,6 +1,5 @@
 package com.unioncraftmod.datagen;
 
-import com.google.common.eventbus.Subscribe;
 import com.unioncraftmod.UnionCraftMod;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;

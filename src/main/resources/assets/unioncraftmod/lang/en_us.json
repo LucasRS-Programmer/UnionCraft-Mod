@@ -9,6 +9,7 @@
   "item.unioncraftmod.torchflower_sword": "Torchflower Sword",
   "item.unioncraftmod.sunflower_sword": "Sunflower Sword",
   "item.unioncraftmod.ruby_sword": "Ruby Sword",
+  "item.unioncraftmod.sapphire_sword": "Sapphire Sword",
 
   "_items": "VV TOOLS VV",
   "item.unioncraftmod.ruby_pickaxe": "Ruby Pickaxe",
@@ -16,14 +17,27 @@
   "item.unioncraftmod.ruby_shovel": "Ruby Shovel",
   "item.unioncraftmod.ruby_hoe": "Ruby Hoe",
 
+  "item.unioncraftmod.sapphire_pickaxe": "Sapphire Pickaxe",
+  "item.unioncraftmod.sapphire_axe": "Sapphire Axe",
+  "item.unioncraftmod.sapphire_shovel": "Sapphire Shovel",
+  "item.unioncraftmod.sapphire_hoe": "Sapphire Hoe",
+
   "_items": "VV ARMORS VV",
   "item.unioncraftmod.ruby_helmet": "Ruby Helmet",
   "item.unioncraftmod.ruby_chestplate": "Ruby Chestplate",
   "item.unioncraftmod.ruby_leggings": "Ruby Leggings",
   "item.unioncraftmod.ruby_boots": "Ruby Boots",
 
+  "item.unioncraftmod.sapphire_helmet": "Sapphire Helmet",
+  "item.unioncraftmod.sapphire_chestplate": "Sapphire Chestplate",
+  "item.unioncraftmod.sapphire_leggings": "Sapphire Leggings",
+  "item.unioncraftmod.sapphire_boots": "Sapphire Boots",
+
   "_fuels": "VV FUELS VV",
   "item.unioncraftmod.big_bang": "Big Bang",
+  "item.unioncraftmod.compressed_coal": "Compressed Coal",
+  "block.unioncraftmod.compressed_coal_block": "Compressed Block of Coal",
+
 
   "_block": "VV BLOCKS VV",
   "block.unioncraftmod.ruby_ore": "Ruby Ore",
@@ -33,11 +47,17 @@
   "block.unioncraftmod.ruby_block": "Block of Ruby",
   "block.unioncraftmod.sapphire_block": "Block of Sapphire",
 
+
+  "_block": "VV MACHINES VV",
+  "block.unioncraftmod.crafter_compressor": "Crafter Compressor",
+
   "_tooltips": "VV TOOLTIPS VV",
   "tooltip.unioncraftmod.big_bang.shift": "§7Hold §eSHIFT §7for more information",
   "tooltip.unioncraftmod.big_bang.lore1": "§5The primordial energy that birthed the universe.",
   "tooltip.unioncraftmod.big_bang.lore2": "§dCondensed into an eternal core.",
-  "tooltip.unioncraftmod.big_bang.lore3": "§7Never consumed!",
+
+  "tooltip.unioncraftmod.coal_equivalent": "Equivalent to %s coal",
+  "tooltip.unioncraftmod.infinite_fuel": "Infinite fuel",
 
   "creativetab": "VV CREATIVE TAB VV",
   "creativetab.unioncraft_tab": "UnionCraft Mod"

@@ -9,6 +9,7 @@
   "item.unioncraftmod.torchflower_sword": "Espada de Plantocha",
   "item.unioncraftmod.sunflower_sword": "Espada de Girassol",
   "item.unioncraftmod.ruby_sword": "Espada de Rubi",
+  "item.unioncraftmod.sapphire_sword": "Espada de Safira",
 
   "_items": "VV FERRAMENTAS VV",
   "item.unioncraftmod.ruby_pickaxe": "Picareta de Rubi",
@@ -16,14 +17,26 @@
   "item.unioncraftmod.ruby_shovel": "Pá de Rubi",
   "item.unioncraftmod.ruby_hoe": "Enxada de Rubi",
 
+  "item.unioncraftmod.sapphire_pickaxe": "Picareta de Safira",
+  "item.unioncraftmod.sapphire_axe": "Machado de Safira",
+  "item.unioncraftmod.sapphire_shovel": "Pá de Safira",
+  "item.unioncraftmod.sapphire_hoe": "Enxada de Safira",
+
   "_items": "VV ARMADURAS VV",
   "item.unioncraftmod.ruby_helmet": "Capacete de Rubi",
   "item.unioncraftmod.ruby_chestplate": "Peitoral de Rubi",
   "item.unioncraftmod.ruby_leggings": "Calças de Rubi",
-  "item.unioncraftmod.ruby_boots": "Bota de Rubi",
+  "item.unioncraftmod.ruby_boots": "Botas de Rubi",
+
+  "item.unioncraftmod.sapphire_helmet": "Capacete de Safira",
+  "item.unioncraftmod.sapphire_chestplate": "Peitoral de Safira",
+  "item.unioncraftmod.sapphire_leggings": "Calças de Safira",
+  "item.unioncraftmod.sapphire_boots": "Botas de Safira",
 
   "_combustiveis": "VV COMBUSTIVEIS VV",
   "item.unioncraftmod.big_bang": "Big Bang",
+  "item.unioncraftmod.compressed_coal": "Carvão Comprimido",
+  "block.unioncraftmod.compressed_coal_block": "Bloco de Carvão Comprimido",
 
   "_blocos": "VV BLOCOS VV",
   "block.unioncraftmod.ruby_ore": "Minério de Rubi",
@@ -33,11 +46,15 @@
   "block.unioncraftmod.ruby_block": "Bloco de Rubi",
   "block.unioncraftmod.sapphire_block": "Bloco de Safira",
 
+  "_block": "VV MAQUINAS VV",
+  "block.unioncraftmod.crafter_compressor": "Compressor de Fabricação",
+
   "_tooltips": "VV DESCRIÇÕES VV",
   "tooltip.unioncraftmod.big_bang.shift": "§7Segure §eSHIFT §7para mais informações",
   "tooltip.unioncraftmod.big_bang.lore1": "§5A energia primordial que deu origem ao universo",
   "tooltip.unioncraftmod.big_bang.lore2": "§dCondensada em um núcleo impossível.",
-  "tooltip.unioncraftmod.big_bang.lore3": "§7Nunca se consome!",
+  "tooltip.unioncraftmod.coal_equivalent": "Equivale a %s carvões",
+  "tooltip.unioncraftmod.infinite_fuel": "Combustível infinito",
 
   "_abacriativa": "VV ABA CREATIVA VV",
   "creativetab.unioncraft_tab": "UnionCraft Mod"

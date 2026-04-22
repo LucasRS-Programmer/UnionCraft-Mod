@@ -1,0 +1,9 @@
+{
+  "parent": "block/orientable",
+  "textures": {
+    "front": "unioncraftmod:block/crafter_compressor_front",
+    "side": "unioncraftmod:block/crafter_compressor_side",
+    "top": "unioncraftmod:block/crafter_compressor_top",
+    "bottom": "unioncraftmod:block/crafter_compressor_bottom"
+  }
+}

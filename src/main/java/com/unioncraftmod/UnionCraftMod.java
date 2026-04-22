@@ -2,8 +2,11 @@ package com.unioncraftmod;
 
 import com.mojang.logging.LogUtils;
 import com.unioncraftmod.block.ModBlocks;
+import com.unioncraftmod.block.entity.ModBlockEntities;
 import com.unioncraftmod.item.ModCreativeModeTab;
 import com.unioncraftmod.item.ModItems;
+import com.unioncraftmod.menu.ModMenusTypes;
+import com.unioncraftmod.recipe.ModRecipes;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Items;
@@ -32,11 +35,17 @@ public class UnionCraftMod
     {
         IEventBus modEventBus = context.getModEventBus();
 
+        ModMenusTypes.MENUS.register(modEventBus);
+
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
+        ModRecipes.SERIALIZERS.register(modEventBus);
+        ModRecipes.TYPES.register(modEventBus);
+
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
 
         ModCreativeModeTab.register(modEventBus);
 

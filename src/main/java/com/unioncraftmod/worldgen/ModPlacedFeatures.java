@@ -26,12 +26,14 @@ public class ModPlacedFeatures {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
         register(context, RUBY_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.RUBY_ORE_KEY),
-                ModOrePlacement.commonOrePlacement(8,
-                        HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(16))));
+                ModOrePlacement.rareOrePlacement(7,
+                        HeightRangePlacement.triangle(VerticalAnchor.absolute(-64),
+                                VerticalAnchor.absolute(16))));
 
         register(context, SAPPHIRE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SAPPHIRE_ORE_KEY),
-                ModOrePlacement.commonOrePlacement(8,
-                        HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(16))));
+                ModOrePlacement.rareOrePlacement(7,
+                        HeightRangePlacement.triangle(VerticalAnchor.absolute(-64),
+                                VerticalAnchor.absolute(16))));
 
 
     }

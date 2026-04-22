@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "M": {
+      "item": "unioncraftmod:ruby"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "MMM",
+    " S ",
+    " S "
+  ],
+  "result": {
+    "item": "unioncraftmod:ruby_pickaxe"
+  },
+  "show_notification": true
+}

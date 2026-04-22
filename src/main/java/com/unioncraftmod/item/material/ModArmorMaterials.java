@@ -21,9 +21,23 @@ public enum ModArmorMaterials implements ArmorMaterial {
             18,
             SoundEvents.ARMOR_EQUIP_DIAMOND,
             () -> Ingredient.of(ModItems.RUBY.get()),
-            2.5F,
+            1.8F,
+            0.05F
+    ),
+
+    SAPPHIRE(
+            new EnumMap<>(ArmorItem.Type.class) {{
+                put(ArmorItem.Type.BOOTS, 3);
+                put(ArmorItem.Type.LEGGINGS, 6);
+                put(ArmorItem.Type.CHESTPLATE, 8);
+                put(ArmorItem.Type.HELMET, 3);
+    }},
+            20,
+    SoundEvents.ARMOR_EQUIP_DIAMOND,
+            () -> Ingredient.of(ModItems.SAPPHIRE.get()),
+            2.7F,
             0.1F
-    );
+            );
 
     private final EnumMap<ArmorItem.Type, Integer> defense;
     private final int enchantmentValue;
@@ -49,7 +63,7 @@ public enum ModArmorMaterials implements ArmorMaterial {
     @Override
     public int getDurabilityForType(ArmorItem.Type type) {
         int[] baseDurability = {13, 15, 16, 11}; // boots, leggings, chestplate, helmet
-        return baseDurability[type.ordinal()] * 25; // igual diamante
+        return baseDurability[type.ordinal()] * (this == SAPPHIRE ? 28 : 24);
     }
 
     @Override
@@ -74,7 +88,7 @@ public enum ModArmorMaterials implements ArmorMaterial {
 
     @Override
     public String getName() {
-        return "unioncraft:ruby";
+        return "unioncraft:" + this.name().toLowerCase();
     }
 
     @Override

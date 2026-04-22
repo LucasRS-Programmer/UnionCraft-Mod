@@ -22,32 +22,53 @@ public class ModCreativeModeTab {
                 .displayItems((itemDisplayParameters, output) -> {
                     output.accept(ModItems.RUBY.get());
                     output.accept(ModItems.SAPPHIRE.get());
+                    output.accept(ModItems.COMPRESSED_COAL.get());
 
                     output.accept(ModItems.ROSE_SWORD.get());
                     output.accept(ModItems.TORCHFLOWER_SWORD.get());
                     output.accept(ModItems.SUNFLOWER_SWORD.get());
                     output.accept(ModItems.RUBY_SWORD.get());
+                    output.accept(ModItems.SAPPHIRE_SWORD.get());
 
+                    //RUBY TOOLS
                     output.accept(ModItems.RUBY_PICKAXE.get());
                     output.accept(ModItems.RUBY_AXE.get());
                     output.accept(ModItems.RUBY_SHOVEL.get());
                     output.accept(ModItems.RUBY_HOE.get());
 
+                    //RUBY ARMOR
                     output.accept(ModItems.RUBY_HELMET.get());
                     output.accept(ModItems.RUBY_CHESTPLATE.get());
                     output.accept(ModItems.RUBY_LEGGINGS.get());
                     output.accept(ModItems.RUBY_BOOTS.get());
 
+                    //SAPPHIRE TOOLS
+                    output.accept(ModItems.SAPPHIRE_SWORD.get());
+                    output.accept(ModItems.SAPPHIRE_PICKAXE.get());
+                    output.accept(ModItems.SAPPHIRE_AXE.get());
+                    output.accept(ModItems.SAPPHIRE_SHOVEL.get());
+                    output.accept(ModItems.SAPPHIRE_HOE.get());
+
+                    //SAPPHIRE ARMOR
+                    output.accept(ModItems.SAPPHIRE_HELMET.get());
+                    output.accept(ModItems.SAPPHIRE_CHESTPLATE.get());
+                    output.accept(ModItems.SAPPHIRE_LEGGINGS.get());
+                    output.accept(ModItems.SAPPHIRE_BOOTS.get());
+
+                    //BLOCKS
                     output.accept(ModBlocks.RUBY_ORE.get());
                     output.accept(ModBlocks.DEEPSLATE_RUBY_ORE.get());
                     output.accept(ModBlocks.SAPPHIRE_ORE.get());
                     output.accept(ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get());
                     output.accept(ModBlocks.RUBY_BLOCK.get());
                     output.accept(ModBlocks.SAPPHIRE_BLOCK.get());
+                    output.accept(ModBlocks.COMPRESSED_COAL_BLOCK.get());
+                    output.accept(ModBlocks.CRAFTER_COMPRESSOR.get());
 
                     output.accept(ModItems.GUAVA.get());
 
                     output.accept(ModItems.BIG_BANG.get());
+
 
                 } )
                 .build());

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "M": {
+      "item": "unioncraftmod:ruby"
+    }
+  },
+  "pattern": [
+    "MMM",
+    "M M",
+    "M M"
+  ],
+  "result": {
+    "item": "unioncraftmod:ruby_leggings"
+  },
+  "show_notification": true
+}

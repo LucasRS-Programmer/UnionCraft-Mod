@@ -1,7 +1,7 @@
-// 1.20.1	2026-03-28T10:08:56.6209223	Registries
+// 1.20.1	2026-04-22T11:01:50.2748889	Registries
 20ad73b8b00a1e0994f6e98d4b7d4ea0dcb92413 data/unioncraftmod/forge/biome_modifier/add_ruby_ore.json
 912e01940c73c66dbc78ba9d879ab4dd17bdf6f1 data/unioncraftmod/forge/biome_modifier/add_sapphire_ore.json
 3c0309652143cb57e7569420ca47936f84ffe683 data/unioncraftmod/worldgen/configured_feature/ruby_ore.json
 f95a089cf0d937bc0a293fc6f0cfa7e5f223e26b data/unioncraftmod/worldgen/configured_feature/sapphire_ore.json
-66c7766a2049500430d08c1e623447dfb727b016 data/unioncraftmod/worldgen/placed_feature/ruby_ore_placed.json
-0579c743dd415ac09b07748ffbbb96083f9af73e data/unioncraftmod/worldgen/placed_feature/sapphire_ore_placed.json
+ad7c156e43f40f017db96860e944d4cc873f3a11 data/unioncraftmod/worldgen/placed_feature/ruby_ore_placed.json
+2289c282e7f17232f3720f31ee02af6292889260 data/unioncraftmod/worldgen/placed_feature/sapphire_ore_placed.json

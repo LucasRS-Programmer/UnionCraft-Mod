@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "M": {
+      "item": "unioncraftmod:sapphire"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "MM ",
+    " S ",
+    " S "
+  ],
+  "result": {
+    "item": "unioncraftmod:sapphire_hoe"
+  },
+  "show_notification": true
+}

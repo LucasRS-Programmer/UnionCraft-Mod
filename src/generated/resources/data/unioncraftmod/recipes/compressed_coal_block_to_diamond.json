@@ -1,0 +1,15 @@
+{
+  "type": "unioncraftmod:compressing",
+  "count": 1,
+  "ingredients": [
+    {
+      "count": 1,
+      "ingredient": {
+        "item": "unioncraftmod:compressed_coal_block"
+      }
+    }
+  ],
+  "result": {
+    "item": "minecraft:diamond"
+  }
+}

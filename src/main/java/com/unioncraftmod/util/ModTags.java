@@ -1,4 +1,5 @@
 package com.unioncraftmod.util;
+
 import com.unioncraftmod.UnionCraftMod;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
@@ -15,9 +16,7 @@ public class ModTags {
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath(UnionCraftMod.MOD_ID, name));
         }
 
-        public static final TagKey<Block> MOD_ORE =
-                BlockTags.create(ResourceLocation.fromNamespaceAndPath("unioncraftmod", "mod_ore"));
-
+        public static final TagKey<Block> MOD_ORE = tag("mod_ore");
     }
 
     public static class Items {
@@ -26,21 +25,11 @@ public class ModTags {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(UnionCraftMod.MOD_ID, name));
         }
 
-        public static final TagKey<Item> ROSE_FLOWERS =
-                ItemTags.create(ResourceLocation.fromNamespaceAndPath("unioncraftmod", "rose_flowers"));
+        public static final TagKey<Item> ROSE_FLOWERS = tag("rose_flowers");
+        public static final TagKey<Item> TORCHFLOWERS = tag("torchflowers");
+        public static final TagKey<Item> YELLOW_FLOWERS = tag("yellow_flowers");
 
-        public static final TagKey<Item> TORCHFLOWERS =
-                ItemTags.create(ResourceLocation.fromNamespaceAndPath("unioncraftmod", "torchflowers"));
-
-        public static final TagKey<Item> YELLOW_FLOWERS =
-                ItemTags.create(ResourceLocation.fromNamespaceAndPath("unioncraftmod", "yellow_flowers"));
-
-        public static final TagKey<Item> RUBY_ITEMS =
-                ItemTags.create(ResourceLocation.fromNamespaceAndPath("unioncraftmod", "ruby_items"));
-
-        public static final TagKey<Item> SAPPHIRE_ITEMS =
-                ItemTags.create(ResourceLocation.fromNamespaceAndPath("unioncraftmod", "ruby_items"));
-
+        public static final TagKey<Item> RUBY_ITEMS = tag("ruby_items");
+        public static final TagKey<Item> SAPPHIRE_ITEMS = tag("sapphire_items");
     }
-
 }
