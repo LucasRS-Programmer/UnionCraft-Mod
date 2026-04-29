@@ -1,7 +1,7 @@
-// 1.20.1	2026-04-16T13:06:49.209007	Tags for minecraft:block mod id unioncraftmod
+// 1.20.1	2026-04-25T10:11:43.9050395	Tags for minecraft:block mod id unioncraftmod
 1dec5183ae38ea3fcb0a49159f5357881b640b70 data/forge/tags/blocks/ores.json
 47907db67228597cd083d7844417ce45b2e55877 data/minecraft/tags/blocks/mineable/pickaxe.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/blocks/needs_diamond_tool.json
-0ec7fcbbd00ed9708619174b58bb287a323bbb3e data/minecraft/tags/blocks/needs_iron_tool.json
-35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/blocks/needs_stone_tool.json
-901bb0b8025765d6f702aaeb405f2d45bc599156 data/unioncraftmod/tags/blocks/mod_ore.json
+8ebf1500809821af1b4c57ea5edc1aabf804f936 data/minecraft/tags/blocks/needs_iron_tool.json
+919860c4dbb9630d11629895eec5c906d99446ba data/minecraft/tags/blocks/needs_stone_tool.json
+97cb7d1739e880c4340e8191c9e2e5d4163db41d data/unioncraftmod/tags/blocks/mod_ore.json

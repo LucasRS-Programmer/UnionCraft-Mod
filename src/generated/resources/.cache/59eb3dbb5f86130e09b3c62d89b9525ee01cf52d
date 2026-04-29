@@ -1,9 +1,9 @@
-// 1.20.1	2026-04-16T13:06:49.3815477	Loot Tables
+// 1.20.1	2026-04-29T10:09:40.3940599	Loot Tables
 7c18c7ae82f5100e04d70ea9fcb6013936c86573 data/unioncraftmod/loot_tables/blocks/compressed_coal_block.json
 4e058a0505cd9d57f6f293bcc277976f91cea1c1 data/unioncraftmod/loot_tables/blocks/crafter_compressor.json
-1d36dfd5d24060bfd5a91df7d76f870be2f7db1b data/unioncraftmod/loot_tables/blocks/deepslate_ruby_ore.json
-c51715796f2938047878355cfcd9f7dd0c121f43 data/unioncraftmod/loot_tables/blocks/deepslate_sapphire_ore.json
+7b311053693bbd97bbb07d1cfaaa1f5251f0af4b data/unioncraftmod/loot_tables/blocks/deepslate_ruby_ore.json
+537e426618cebc9e5678642ebc5c4719d4e66662 data/unioncraftmod/loot_tables/blocks/deepslate_sapphire_ore.json
 2a527abc17191cb60f03ca9ede7a5337431fe174 data/unioncraftmod/loot_tables/blocks/ruby_block.json
-287007339b17c783b61d6b3af58dea8f2331b617 data/unioncraftmod/loot_tables/blocks/ruby_ore.json
+83428a4cdc8ee450d300e28006549559d86265f5 data/unioncraftmod/loot_tables/blocks/ruby_ore.json
 56aee31a8f9ea955d7e344e5afce0331a6c380a3 data/unioncraftmod/loot_tables/blocks/sapphire_block.json
-a74f70173226fe7689c912a66de0860b69748899 data/unioncraftmod/loot_tables/blocks/sapphire_ore.json
+9e98bb9e16b4ebb827e7a4450bf6f0a94e1a2f47 data/unioncraftmod/loot_tables/blocks/sapphire_ore.json

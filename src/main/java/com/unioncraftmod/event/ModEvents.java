@@ -16,8 +16,8 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
-import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.event.RegisterCommandsEvent;
@@ -74,30 +74,17 @@ public class ModEvents {
         ItemStack weapon = player.getMainHandItem();
         if (!weapon.is(ModItems.RUBY_SWORD.get())) return;
 
-        player.addEffect(new MobEffectInstance(
-                MobEffects.DAMAGE_BOOST, 20, 0, false, false, true
-        ));
+// BONUS LEVE
+        event.setAmount(event.getAmount() * 1.05F);
 
-        event.setAmount(event.getAmount() * 1.15F);
+        float roll = player.level().random.nextFloat();
 
-        // CRÍTICO
-        if (player.level().random.nextFloat() < 0.25F) {
-            event.setAmount(event.getAmount() * 1.4F);
+// CRÍTICO FORTE (Mais raro + wither)
+        if (roll < 0.05F) {
+            event.setAmount(event.getAmount() * 1.6F);
 
-            player.level().playSound(
-                    null,
-                    player.blockPosition(),
-                    SoundEvents.PLAYER_ATTACK_CRIT,
-                    SoundSource.PLAYERS,
-                    1.0F,
-                    1.0F
-            );
-        }
-
-        // WITHER
-        if (player.level().random.nextFloat() < 0.20F) {
             event.getEntity().addEffect(
-                    new MobEffectInstance(MobEffects.WITHER, 80, 0)
+                    new MobEffectInstance(MobEffects.WITHER, 60, 0)
             );
 
             ((ServerLevel) player.level()).sendParticles(
@@ -108,6 +95,28 @@ public class ModEvents {
                     10,
                     0.3, 0.3, 0.3,
                     0.1
+            );
+
+            player.level().playSound(
+                    null,
+                    player.blockPosition(),
+                    SoundEvents.PLAYER_ATTACK_CRIT,
+                    SoundSource.PLAYERS,
+                    1.2F,
+                    0.8F
+            );
+
+// CRÍTICO NORMAL
+        } else if (roll < 0.20F) {
+            event.setAmount(event.getAmount() * 1.3F);
+
+            player.level().playSound(
+                    null,
+                    player.blockPosition(),
+                    SoundEvents.PLAYER_ATTACK_CRIT,
+                    SoundSource.PLAYERS,
+                    1.0F,
+                    1.0F
             );
         }
     }
@@ -136,30 +145,20 @@ public class ModEvents {
 
         // SPEED I (sem sobrescrever efeito melhor)
         MobEffectInstance current = player.getEffect(MobEffects.MOVEMENT_SPEED);
-        if (isWearingRuby && (current == null || current.getAmplifier() < 0)) {
-            player.addEffect(new MobEffectInstance(
-                    MobEffects.MOVEMENT_SPEED,
-                    40,
-                    0,
-                    false,
-                    false,
-                    true
-            ));
+        if (isWearingRuby) {
+            if (current == null || current.getDuration() < 10) {
+                player.addEffect(new MobEffectInstance(
+                        MobEffects.MOVEMENT_SPEED,
+                        40,
+                        0,
+                        false,
+                        false,
+                        true
+                ));
+            }
         }
 
-        // SOM AO EQUIPAR
-        if (isWearingRuby && !wasActive) {
-            player.level().playSound(
-                    null,
-                    player.blockPosition(),
-                    SoundEvents.BEACON_ACTIVATE,
-                    SoundSource.PLAYERS,
-                    1.0F,
-                    1.0F
-            );
-        }
-
-        // SOM AO REMOVER (opcional, mas recomendado)
+        // SOM AO REMOVER
         if (!isWearingRuby && wasActive) {
             player.level().playSound(
                     null,
@@ -171,7 +170,9 @@ public class ModEvents {
             );
         }
 
-        rubyActive.put(player.getUUID(), isWearingRuby);
+        if (isWearingRuby != wasActive) {
+            rubyActive.put(player.getUUID(), isWearingRuby);
+        }
 
         // =====================
         // ARMADURA DE SAFIRA
@@ -190,16 +191,29 @@ public class ModEvents {
                     MobEffects.LUCK, 40, 0, false, false, true
             ));
         }
+
+        // SOM AO REMOVER
+        if (!isWearingRuby && wasActive) {
+            player.level().playSound(
+                    null,
+                    player.blockPosition(),
+                    SoundEvents.BEACON_DEACTIVATE,
+                    SoundSource.PLAYERS,
+                    1.0F,
+                    1.0F
+            );
+        }
     }
 
     // =====================
-    // ARMADURA DE SAFIRA - MINERAÇÃO
+    // SAFIRA - MINERAÇÃO
     // =====================
+
     @SubscribeEvent
     public static void onBlockBreak(BlockEvent.BreakEvent event) {
         Level level = (Level) event.getLevel();
 
-        if (level.isClientSide) return;
+        if (!(level instanceof ServerLevel serverLevel)) return;
 
         Player player = event.getPlayer();
 
@@ -211,48 +225,48 @@ public class ModEvents {
                 ModItems.SAPPHIRE_LEGGINGS.get(),
                 ModItems.SAPPHIRE_BOOTS.get())) return;
 
-        BlockPos pos = event.getPos();
-        var state = level.getBlockState(pos);
         ItemStack tool = player.getMainHandItem();
-
         if (tool.isEmpty()) return;
 
-        int silk = EnchantmentHelper.getItemEnchantmentLevel(
-                Enchantments.SILK_TOUCH,
-                tool
-        );
+        BlockPos pos = event.getPos();
+        var state = level.getBlockState(pos);
 
-        if (silk > 0) return;
+        // Filtro: só minério e plantação
+        boolean isOre = state.getBlock().getDescriptionId().contains("ore");
+        boolean isCrop = state.getBlock() instanceof CropBlock;
 
-        ItemStack fortuneTool = tool.copy();
+        if (!isOre && !isCrop) return;
 
-        int currentFortune = EnchantmentHelper.getItemEnchantmentLevel(
-                Enchantments.BLOCK_FORTUNE,
-                tool
-        );
-
-        fortuneTool.enchant(Enchantments.BLOCK_FORTUNE, currentFortune + 2);
-
-        var blockEntity = level.getBlockEntity(pos);
+        //  chance de ativar (ex: 15%)
+        if (serverLevel.random.nextFloat() > 0.15F) return;
 
         var drops = Block.getDrops(
                 state,
-                (ServerLevel) level,
+                serverLevel,
                 pos,
-                blockEntity,
+                level.getBlockEntity(pos),
                 player,
-                fortuneTool
+                tool
         );
 
-        if (drops.size() == 1 && drops.get(0).isEmpty()) return;
-
-        event.setCanceled(true);
-
         for (ItemStack drop : drops) {
-            Block.popResource(level, pos, drop);
-        }
+            if (drop.isEmpty()) continue;
 
-        level.destroyBlock(pos, false, player);
+            int original = drop.getCount();
+
+            if (original <= 0) continue;
+
+            // Extra aleatório (até dobrar)
+            int extra = serverLevel.random.nextInt(original + 1);
+            // exemplo: se original = 8 redstones → extra pode vir de 0 até 8 redstones
+
+            if (extra > 0) {
+                ItemStack bonus = drop.copy();
+                bonus.setCount(extra);
+
+                Block.popResource(level, pos, bonus);
+            }
+        }
     }
 
     //comando debug para checar se minérios estão spawnando no mundo!
