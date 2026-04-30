@@ -54,7 +54,7 @@ public class ModItems {
 
     //RUBY SET
     public static final RegistryObject<Item> RUBY_SWORD = ITEMS.register("ruby_sword",
-            () -> new SwordItem(ModToolTiers.RUBY_ITEMS, 4, -2.4F,
+            () -> new SwordItem(ModToolTiers.RUBY_ITEMS, 3, -2.4F,
                     new Item.Properties().rarity(Rarity.UNCOMMON)));
 
     public static final RegistryObject<Item> RUBY_PICKAXE = ITEMS.register("ruby_pickaxe",

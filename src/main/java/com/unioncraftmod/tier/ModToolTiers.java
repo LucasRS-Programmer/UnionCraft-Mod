@@ -43,9 +43,9 @@ public class ModToolTiers {
 
     public static final Tier RUBY_ITEMS = new ForgeTier(
             4,
-            1250,
+            1150,
             8.2F,
-            4.0F,
+            3.5F,
             18,
             BlockTags.NEEDS_DIAMOND_TOOL,
             () -> Ingredient.of(ModItems.RUBY.get())
@@ -53,9 +53,9 @@ public class ModToolTiers {
 
     public static final Tier SAPPHIRE_ITEMS = new ForgeTier(
             4,
-            1900,
-            9.5F,
-            2.5F,
+            1850,
+            9.0F,
+            3.0F,
             24,
             BlockTags.NEEDS_DIAMOND_TOOL,
             () -> Ingredient.of(ModItems.SAPPHIRE.get())

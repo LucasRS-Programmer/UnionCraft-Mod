@@ -36,6 +36,7 @@ import java.util.UUID;
 public class ModEvents {
 
     private static final Map<UUID, Boolean> rubyActive = new HashMap<>();
+    private static final Map<UUID, Boolean> sapphireActive = new HashMap<>();
 
     private static boolean isWearingFullSet(Player player, Item helmet, Item chest, Item legs, Item boots) {
         return player.getInventory().getArmor(3).is(helmet) &&
@@ -74,12 +75,12 @@ public class ModEvents {
         ItemStack weapon = player.getMainHandItem();
         if (!weapon.is(ModItems.RUBY_SWORD.get())) return;
 
-// BONUS LEVE
+        // BONUS LEVE
         event.setAmount(event.getAmount() * 1.05F);
 
         float roll = player.level().random.nextFloat();
 
-// CRÍTICO FORTE (Mais raro + wither)
+        // CRÍTICO FORTE
         if (roll < 0.05F) {
             event.setAmount(event.getAmount() * 1.6F);
 
@@ -106,7 +107,7 @@ public class ModEvents {
                     0.8F
             );
 
-// CRÍTICO NORMAL
+            // CRÍTICO NORMAL
         } else if (roll < 0.20F) {
             event.setAmount(event.getAmount() * 1.3F);
 
@@ -122,7 +123,7 @@ public class ModEvents {
     }
 
     // =====================
-    // TICK (BUFFS PASSIVOS)
+    // TICK (BUFFS PASSIVOS + SOM)
     // =====================
     @SubscribeEvent
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
@@ -143,9 +144,10 @@ public class ModEvents {
 
         boolean wasActive = rubyActive.getOrDefault(player.getUUID(), false);
 
-        // SPEED I (sem sobrescrever efeito melhor)
-        MobEffectInstance current = player.getEffect(MobEffects.MOVEMENT_SPEED);
+        // SPEED I
         if (isWearingRuby) {
+            MobEffectInstance current = player.getEffect(MobEffects.MOVEMENT_SPEED);
+
             if (current == null || current.getDuration() < 10) {
                 player.addEffect(new MobEffectInstance(
                         MobEffects.MOVEMENT_SPEED,
@@ -158,57 +160,109 @@ public class ModEvents {
             }
         }
 
-        // SOM AO REMOVER
+        // 🔊 ATIVAÇÃO
+        if (isWearingRuby && !wasActive) {
+            player.level().playSound(
+                    null,
+                    player.blockPosition(),
+                    SoundEvents.BEACON_ACTIVATE,
+                    SoundSource.PLAYERS,
+                    1.1F,
+                    1.1F
+            );
+        }
+
+        // 🔊 DESATIVAÇÃO
         if (!isWearingRuby && wasActive) {
             player.level().playSound(
                     null,
                     player.blockPosition(),
                     SoundEvents.BEACON_DEACTIVATE,
                     SoundSource.PLAYERS,
-                    1.0F,
-                    1.0F
+                    1.1F,
+                    1.1F
             );
         }
 
+        // Atualiza estado
         if (isWearingRuby != wasActive) {
             rubyActive.put(player.getUUID(), isWearingRuby);
         }
 
         // =====================
-        // ARMADURA DE SAFIRA
-        // =====================
-        if (isWearingFullSet(player,
+// SAFIRA
+// =====================
+        boolean isWearingSapphire = isWearingFullSet(player,
                 ModItems.SAPPHIRE_HELMET.get(),
                 ModItems.SAPPHIRE_CHESTPLATE.get(),
                 ModItems.SAPPHIRE_LEGGINGS.get(),
-                ModItems.SAPPHIRE_BOOTS.get())) {
+                ModItems.SAPPHIRE_BOOTS.get());
 
-            player.addEffect(new MobEffectInstance(
-                    MobEffects.DIG_SPEED, 40, 0, false, false, true
-            ));
+        boolean wasSapphireActive = sapphireActive.getOrDefault(player.getUUID(), false);
 
-            player.addEffect(new MobEffectInstance(
-                    MobEffects.LUCK, 40, 0, false, false, true
-            ));
+// Buffs
+        if (isWearingSapphire) {
+
+            // HASTE (Mineração)
+            MobEffectInstance haste = player.getEffect(MobEffects.DIG_SPEED);
+            if (haste == null || haste.getAmplifier() < 0 || haste.getDuration() < 10) {
+                player.addEffect(new MobEffectInstance(
+                        MobEffects.DIG_SPEED,
+                        40,
+                        0,
+                        false,
+                        false,
+                        true
+                ));
+            }
+
+            // LUCK (Loot)
+            MobEffectInstance luck = player.getEffect(MobEffects.LUCK);
+            if (luck == null || luck.getDuration() < 10) {
+                player.addEffect(new MobEffectInstance(
+                        MobEffects.LUCK,
+                        40,
+                        0,
+                        false,
+                        false,
+                        true
+                ));
+            }
         }
 
-        // SOM AO REMOVER
-        if (!isWearingRuby && wasActive) {
+// 🔊 ATIVAÇÃO
+        if (isWearingSapphire && !wasSapphireActive) {
+            player.level().playSound(
+                    null,
+                    player.blockPosition(),
+                    SoundEvents.BEACON_ACTIVATE,
+                    SoundSource.PLAYERS,
+                    0.9F,
+                    1.1F
+            );
+        }
+
+// 🔊 DESATIVAÇÃO
+        if (!isWearingSapphire && wasSapphireActive) {
             player.level().playSound(
                     null,
                     player.blockPosition(),
                     SoundEvents.BEACON_DEACTIVATE,
                     SoundSource.PLAYERS,
-                    1.0F,
-                    1.0F
+                    0.9F,
+                    1.1F
             );
+        }
+
+// Atualiza estado
+        if (isWearingSapphire != wasSapphireActive) {
+            sapphireActive.put(player.getUUID(), isWearingSapphire);
         }
     }
 
     // =====================
     // SAFIRA - MINERAÇÃO
     // =====================
-
     @SubscribeEvent
     public static void onBlockBreak(BlockEvent.BreakEvent event) {
         Level level = (Level) event.getLevel();
@@ -231,13 +285,11 @@ public class ModEvents {
         BlockPos pos = event.getPos();
         var state = level.getBlockState(pos);
 
-        // Filtro: só minério e plantação
         boolean isOre = state.getBlock().getDescriptionId().contains("ore");
         boolean isCrop = state.getBlock() instanceof CropBlock;
 
         if (!isOre && !isCrop) return;
 
-        //  chance de ativar (ex: 15%)
         if (serverLevel.random.nextFloat() > 0.15F) return;
 
         var drops = Block.getDrops(
@@ -253,12 +305,9 @@ public class ModEvents {
             if (drop.isEmpty()) continue;
 
             int original = drop.getCount();
-
             if (original <= 0) continue;
 
-            // Extra aleatório (até dobrar)
             int extra = serverLevel.random.nextInt(original + 1);
-            // exemplo: se original = 8 redstones → extra pode vir de 0 até 8 redstones
 
             if (extra > 0) {
                 ItemStack bonus = drop.copy();
@@ -269,11 +318,12 @@ public class ModEvents {
         }
     }
 
-    //comando debug para checar se minérios estão spawnando no mundo!
+    // =====================
+    // COMANDO DEBUG
+    // =====================
     @SubscribeEvent
     public static void onCommandsRegister(RegisterCommandsEvent event) {
         CommandDispatcher<CommandSourceStack> dispatcher = event.getDispatcher();
-
         CheckModOresCommand.register(dispatcher);
     }
 }
