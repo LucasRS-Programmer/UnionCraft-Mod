@@ -52,7 +52,7 @@
   "block.unioncraftmod.crafter_compressor": "Crafter Compressor",
 
   "_tooltips": "VV TOOLTIPS VV",
-  "tooltip.unioncraftmod.big_bang.shift": "§7Hold §eSHIFT §7for more information",
+  "tooltip.unioncraftmod.shift": "§7Hold §eSHIFT §7for more information",
   "tooltip.unioncraftmod.big_bang.lore1": "§5The primordial energy that birthed the universe.",
   "tooltip.unioncraftmod.big_bang.lore2": "§dCondensed into an eternal core.",
 
