@@ -10,6 +10,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -57,12 +58,13 @@ public class FuelItem extends Item {
 
         super.appendHoverText(stack, level, tooltip, flag);
 
-        String itemName = stack.getItem().getDescriptionId();
-
         // Combustível infinito
         if (infinite) {
             tooltip.add(Component.translatable("tooltip.unioncraftmod.infinite_fuel")
-                    .withStyle(ChatFormatting.LIGHT_PURPLE));
+                    .withStyle(ChatFormatting.GOLD));
+
+            tooltip.add(Component.empty());
+
         } else {
             // 🔥 Equivalência com carvão
             int coalEquivalent = burnTime / ModFuelValues.COAL;
@@ -73,11 +75,13 @@ public class FuelItem extends Item {
             }
         }
 
+        String itemId = ForgeRegistries.ITEMS.getKey(stack.getItem()).getPath();
+
         // 💬 Sistema de lore com SHIFT
         if (Screen.hasShiftDown()) {
 
             for (int i = 1; i <= 10; i++) {
-                String key = itemName + ".lore" + i;
+                String key = "tooltip.unioncraftmod." + itemId + ".lore" + i;
                 Component line = Component.translatable(key);
 
                 // Para quando não existir mais tradução
@@ -87,7 +91,7 @@ public class FuelItem extends Item {
             }
 
         } else {
-            String testKey = itemName + ".lore1";
+            String testKey = "tooltip.unioncraftmod." + itemId + ".lore1";
 
             if (!Component.translatable(testKey).getString().equals(testKey)) {
                 tooltip.add(Component.translatable("tooltip.unioncraftmod.shift")
